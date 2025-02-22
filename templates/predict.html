@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="post" class="shadow p-4 bg-white rounded">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+            {{ form.airline.label(class="form-label") }}
+            {{ form.airline(class="form-select") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.date_of_journey.label(class="form-label") }}
+            {{ form.date_of_journey(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.source.label(class="form-label") }}
+            {{ form.source(class="form-select") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.destination.label(class="form-label") }}
+            {{ form.destination(class="form-select") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.dep_time.label(class="form-label") }}
+            {{ form.dep_time(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.arrival_time.label(class="form-label") }}
+            {{ form.arrival_time(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.duration.label(class="form-label") }}
+            {{ form.duration(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.total_stops.label(class="form-label") }}
+            {{ form.total_stops(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.additional_info.label(class="form-label") }}
+            {{ form.additional_info(class="form-select") }}
+        </div>
+
+        <div class="text-center">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+
+        <div class="mt-3 text-center">
+            <p class="text-success">{{ output }}</p>
+            <a href="{{ url_for('home') }}" class="btn btn-outline-dark">Go to Home</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
